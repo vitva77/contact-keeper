@@ -3,7 +3,7 @@ import React, { Fragment, useContext } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import AuthContext from '../../context/auth/authContext';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdCardAlt } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
@@ -55,8 +55,15 @@ const Navbar = ({ title }) => {
 	return (
 		<div className="navbar bg-primary">
 			<h1>
-				<FontAwesomeIcon icon={faIdCardAlt} /> {title}
+				<Link to="/" className="brand">
+					<FontAwesomeIcon icon={faIdCardAlt} /> {title}
+				</Link>
 			</h1>
+			<ul>
+				<li>
+					<NavLink to="/about">About</NavLink>
+				</li>
+			</ul>
 			<ul>{isAuthenticated ? authLinks : guestLinks}</ul>
 		</div>
 	);

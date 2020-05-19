@@ -382,7 +382,8 @@ table th {
 	color: var(--light-color);
 }
 
-.navbar a.active {
+.navbar a.active,
+.navbar a.brand {
 	opacity: 1;
 }
 

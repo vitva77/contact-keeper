@@ -60,16 +60,17 @@ const Register = (props) => {
 			<form onSubmit={onSubmit}>
 				<div className="form-group">
 					<label htmlFor="name">Name</label>
-					<input type="text" name="name" value={name} onChange={onChange} required />
+					<input type="text" id="name" name="name" value={name} onChange={onChange} required />
 				</div>
 				<div className="form-group">
 					<label htmlFor="email">Email Address</label>
-					<input type="email" name="email" value={email} onChange={onChange} required />
+					<input type="email" id="email" name="email" value={email} onChange={onChange} required />
 				</div>
 				<div className="form-group">
 					<label htmlFor="password">Password</label>
 					<input
 						type="password"
+						id="password"
 						name="password"
 						value={password}
 						onChange={onChange}
@@ -81,6 +82,7 @@ const Register = (props) => {
 					<label htmlFor="password2">Confirm Password</label>
 					<input
 						type="password"
+						id="password2"
 						name="password2"
 						value={password2}
 						onChange={onChange}
