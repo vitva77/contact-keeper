@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 
+import ContactContext from '../../context/contact/contactContext';
 import AuthContext from '../../context/auth/authContext';
 
 import { NavLink } from 'react-router-dom';
@@ -8,14 +9,17 @@ import { faIdCardAlt } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 const Navbar = ({ title }) => {
+	const contactContext = useContext(ContactContext);
 	const authContext = useContext(AuthContext);
 
+	const { clearContacts } = contactContext;
 	const { isAuthenticated, logout, user } = authContext;
 
 	const onLogout = (e) => {
 		e.preventDefault();
 
 		logout();
+		clearContacts();
 	};
 
 	const authLinks = (
